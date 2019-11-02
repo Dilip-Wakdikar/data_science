@@ -1,0 +1,5 @@
+np <- read.csv("C:\\Users\\Megha\\Desktop\\Cigarttes.csv")
+pairs(np[,2:8])
+cor(np[,2:8])
+reg.model <- lm(Sales~.,data = np[,-1])
+summary(reg.model)
