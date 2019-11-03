@@ -1,0 +1,8 @@
+university_data <- read.csv("C:\\Users\\Megha\\Desktop\\Universities.csv")
+mydata <- scale(university_data[,2:7])
+d <- dist(mydata,method = "euclidean")
+fit <- hclust(d,method="centroid")
+plot(fit)
+groups <- cutree(fit,k=4)
+rect.hclust(fit, k =4, border = "red")
+clusters <- data.frame('Uni' = mydata[,1],'Clusters'=groups)
